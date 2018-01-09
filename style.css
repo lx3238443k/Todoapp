@@ -22,6 +22,7 @@
    left: 0;
    width: 280px;
     background: #fff;
+    cursor: pointer;
 }
 
 .sidebar{
@@ -112,6 +113,9 @@
 
 }
 
+.list-title{
+    margin-left: 6px;
+}
 
 
 
@@ -163,7 +167,7 @@
     width:32px;
     height: 32px;
     border-radius: 50%;
-    background-image: url('./icon/account.svg');
+    background-image: url('./icon/user.svg');
     background-size: cover;
     background-color: rgb(172, 172, 172);
     margin-right: 6px;
@@ -171,4 +175,5 @@
 
 .side-list .active{
     background-color: rgb(237, 237, 237);
+    font-weight: 600
 }
