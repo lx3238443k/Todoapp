@@ -1,0 +1,119 @@
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+ background-color: transparent;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(0,0,0,0.2);
+
+}
+
+
+.left{
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   width: 280px;
+    background: #fff;
+}
+
+.sidebar{
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar-header{
+    height: 56px;
+    width: 100%;
+    background:#fff;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    display: flex;
+    border-bottom: 1px solid rgb(145, 145, 145);
+
+}
+
+
+.sidebar-inner{
+    width: 100%;
+    position: absolute;
+    top: 57px;
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    
+    
+}
+
+.side-list li{
+   
+    padding: 0 8px 0 8px;
+    height: 48px;
+    line-height: 48px;
+    background: #fff;
+}
+
+.side-list li:hover{
+    background: rgb(247, 247, 247);
+}
+
+.user{
+    display: flex;
+    /* flex: 8; */
+    width: 216px;
+    padding: 4px;
+    margin: 2px;
+    line-height: 44px;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.user:hover{
+    background-color: rgb(241, 241, 241); 
+}
+
+
+.select-btn{
+    flex: 1;
+    padding: 14px;
+    margin: 2px 0;
+    line-height: 44px;
+    border-radius: 3px;
+}
+
+.select-btn:hover{
+    background-color: rgb(241, 241, 241);
+}
+
+.icon-select{
+   
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url('./icon/select.svg');
+    background-size: cover;
+}
+
+
+
+.user-head{
+    width:32px;
+    height: 32px;
+    border-radius: 50%;
+    background-image: url('./icon/account.svg');
+    background-size: cover;
+    background-color: rgb(172, 172, 172);
+    margin-right: 6px;
+}
+
+.side-list .active{
+    background-color: rgb(237, 237, 237);
+}
