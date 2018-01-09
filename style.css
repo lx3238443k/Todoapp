@@ -61,6 +61,61 @@
     background: #fff;
 }
 
+.side-list li div{
+    display: inline-block;
+
+}
+
+.side-list li .list-logo{
+    width: 24px;
+    height: 24px;
+    vertical-align: sub;
+}
+
+
+
+.side-list li .list-logo .icon-dayli{
+    display: block;
+    background-image: url('./icon/dayli.svg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+
+}
+
+.side-list li .list-logo .icon-list{
+    display: block;
+    background-image: url('./icon/list.svg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+
+}
+
+.side-list li .list-logo .icon-todo{
+    display: block;
+    background-image: url('./icon/account.svg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+
+
+}
+
+
+.side-list li .list-logo .icon-add{
+    display: block;
+    background-image: url('./icon/add.svg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+
+
 .side-list li:hover{
     background: rgb(247, 247, 247);
 }
