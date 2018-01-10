@@ -1,6 +1,7 @@
 $(document).ready(function(){
  
   $(document).bind("contextmenu", function() { return false; });
+
   let that_active = $('#side-list');
 
   function randTitle(num){
@@ -69,14 +70,14 @@ $(document).ready(function(){
 
     }
    
-    });
+  });
   
-
-    $('.left').on('mousedown', 'li', (e)=>{
+      // 关闭弹窗
+       $('.left').on('mousedown', 'li', (e)=>{
        clearDialog();
       });
    
-
+      // 删除内容 
       $('#dialog').on('click','li',(e)=>{
 
         console.log(e.target.dataset.dellist);
@@ -84,16 +85,20 @@ $(document).ready(function(){
         $(`#side-list li[data-listnum="${e.target.dataset.dellist}"]`).remove();  
         clearDialog();
       });
-
-    function clearDialog(){
-      $('#dialog').css({
-        "display":"none"
-      });
-
-
-      $('#dialog .dialog-inner li').remove();
-      $('#dialog .dialog-warrin li').remove();
-    }
+  
+  // 清空弹窗
+  function clearDialog(){
+        $('#dialog').css({
+          "display":"none"
+        });
+  
+  
+        $('#dialog .dialog-inner li').remove();
+        $('#dialog .dialog-warrin li').remove();
+      }
+    
+    
+    
 
 
 });
