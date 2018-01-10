@@ -1,0 +1,24 @@
+.icon-pause{
+    background-image: url('./icon/pause.svg');
+    background-size: cover;
+}
+
+.icon-copy{
+    background-image: url('./icon/copy.svg');
+    background-size: cover;
+}
+
+.icon-copylist{
+    background-image: url('./icon/copylist.svg');
+    background-size: cover;
+}
+
+.icon-setting{
+    background-image: url('./icon/setting.svg');
+    background-size: cover;
+}
+
+.icon-del{
+    background-image: url('./icon/del.svg');
+    background-size: cover;
+}

@@ -6,10 +6,12 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">'
+    <link rel="stylesheet" href="icon.css">
     <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>    
 </head>
 <body>
+    <!-- 左侧表格 -->
     <section class="left">
         <div class="sidebar">
             <div class="sidebar-header">
@@ -55,27 +57,32 @@
             </div>
         </div>
     </section>
-    <section></section>
-
-    <div class="dialog">
+    <!-- 右侧 -->
+    <section class="right">
+        <div>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </section>
+    <!-- 弹出框 -->
+    <div class="dialog" id="dialog">
         <ul class="dialog-title ">
 
         </ul>
         <hr class="dialog-hr none"> 
         <ul class="dialog-inner">
-            <li>
-                <span>
-                    <i>1</i>
-                </span>
-                <span class="dialog-text">111111</span>
-            </li>
+           
         </ul>
         <hr class="dialog-hr"> 
-        <dl class="dialog-warrin">
+        <ul class="dialog-warrin">
            
-        </dl>
+        </ul>
     </div>
 
 </body>
-<script src="main.js"></script>
+<script src="js/main.js"></script>
+<script src="js/todo.js"></script>
 </html>

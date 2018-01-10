@@ -186,8 +186,8 @@
 
 .dialog{
     position: absolute;
-    top: 100px;
-    left: 100px;
+    display: none;
+    cursor: pointer;
 
     background-color: #fff;
 
@@ -200,6 +200,20 @@
 .dialog .dialog-inner li{
     height: 48px;
     padding: 0 8px;
+    display: flex;
+    align-items: center;
+}
+.dialog .dialog-inner li i{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+
+}
+
+.dialog .dialog-inner .dialog-text{
+    line-height: 48px;
+    color: #5f5f5f;
+    padding-left: 8px;
 }
 
 .dialog-hr{
@@ -227,16 +241,37 @@
     border-bottom: 1px solid rgba(0,0,0,.08);
 }
 
-.dialog .dialog-warrin dd{
-   height: 48px;
-   padding: 0 8px;
+.dialog  li:hover{
+    background-color:rgb(241, 241, 241);  
 }
 
+.dialog .dialog-warrin li{
+    height: 48px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+}
+.dialog .dialog-warrin li i{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+
+}
+
+.dialog .dialog-warrin .dialog-text{
+    line-height: 48px;
+    color: #d81e06;
+    padding-left: 8px;
+}
 .dialog .none{
     display: none;
 }
 
-.dialog .dialog-text{
-    line-height: 48px;
-    color: #5f5f5f;
+
+.right{
+    position: absolute;
+    top: 0;
+    left: 280px;
+    right: 0;
+    bottom: 0;
 }
