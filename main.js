@@ -26,6 +26,10 @@ $(document).ready(function(){
                         <div class="list-num"></div>
                       </li>`);
       that_active = $(this).prev();
+      $(this).prev().css("opacity","0");
+      setTimeout(()=>{
+        $(this).prev().css("opacity","1");
+      },100)
     }
     else{
       $(this).toggleClass('active');

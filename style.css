@@ -28,6 +28,7 @@
 .sidebar{
     width: 100%;
     height: 100%;
+    box-shadow: -2px 1px 5px #333;
 }
 
 .sidebar-header{
@@ -54,12 +55,16 @@
     
 }
 
+
+
+
 .side-list li{
    
     padding: 0 8px 0 8px;
     height: 48px;
     line-height: 48px;
     background: #fff;
+    transition-duration: .2s;
 }
 
 .side-list li div{
@@ -176,4 +181,62 @@
 .side-list .active{
     background-color: rgb(237, 237, 237);
     font-weight: 600
+}
+
+
+.dialog{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+
+    background-color: #fff;
+
+    width: 200px;
+    padding: 6px 0;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0,0,0,.3);
+}
+
+.dialog .dialog-inner li{
+    height: 48px;
+    padding: 0 8px;
+}
+
+.dialog-hr{
+    margin: 6px 0;
+    height: 0;
+    padding: 0;
+    border: none;
+    border-top-color: initial;
+    border-top-style: none;
+    border-top-width: initial;
+    border-right-color: initial;
+    border-right-style: none;
+    border-right-width: initial;
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: initial;
+    border-left-style: none;
+    border-left-width: initial;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.dialog .dialog-warrin dd{
+   height: 48px;
+   padding: 0 8px;
+}
+
+.dialog .none{
+    display: none;
+}
+
+.dialog .dialog-text{
+    line-height: 48px;
+    color: #5f5f5f;
 }
