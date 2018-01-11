@@ -1,18 +1,19 @@
-$(document).ready(function(){
+
 
 // 存储数组对象
 
     // job对象
-    var job = function(str,jobtime,Isjobend){
+    var job = function(str,jobtime,Isjobend,hash){
         this.str = str;
         this.jobtime = jobtime;
         this.Isjobend = Isjobend;
+        this.hash = hash;
     }
 
 
 
 
-
+// 键盘创建job
 $("#creat-jobs").on('keydown',(e)=>{
     let input_value= $("#creat-jobs").val();
     if(e.keyCode == 13){
@@ -26,10 +27,12 @@ $("#creat-jobs").on('keydown',(e)=>{
     }
 });
 
+// 生成随机id
 function randId(){
   return  Math.random().toString(36).substr(2);
 }
 
+// 生成时间
 function getTime(){
     let time = new Date();
     
@@ -51,6 +54,7 @@ $('#job-list').on('click','button',(e)=>{
 
 // 生成job
 function creatJob(str){
+    let hash = window.location.hash.slice(2);
     let jobid = randId();
     let jobtime = getTime();
     let Isjobend = 0;
@@ -58,7 +62,7 @@ function creatJob(str){
     <span>${str}</span><input type="checkbox"><button id="deljob">删除</button>
 </li>`);
 
-    let job_child = new job(str,jobtime,Isjobend);
+    let job_child = new job(str,jobtime,Isjobend,hash);
     console.log(job_child);
     saveStroe(jobid,job_child);
 
@@ -141,37 +145,50 @@ $('#sort-letter').click((e)=>{
 
 });
 
+// 刷新页面
 function renderView(){
+    console.log('zhelishimain.js');
+
+    let hash = window.location.hash.slice(2);
+
     let storage =window.localStorage;
     let val =  storage.valueOf();
     let arr = Object.keys(val);
     for(let i=0;i<arr.length;i++){
         let obj = getStroe(arr[i]);
+        if(obj.hash == hash){
+            $('#job-list').append(`<li data-jobid="${arr[i]}" data-time="${ obj.jobtime}" data-Isjobend="${obj.Isjobend}">
+            <span>${obj.str}</span><input type="checkbox"><button id="deljob">删除</button>
+            </li>`);
+            }
+            let ck = $(`#job-list li[data-Isjobend="1"`).children('input[type=checkbox]');
+        
+            $(`#job-list li[data-Isjobend="1"`).css('color','red');
+            
+            for(let j=0;j<ck.length;j++){
+                ck[j].checked =true;
+            }
+        }
        
-        $('#job-list').append(`<li data-jobid="${arr[i]}" data-time="${ obj.jobtime}" data-Isjobend="${obj.Isjobend}">
-        <span>${obj.str}</span><input type="checkbox"><button id="deljob">删除</button>
-    </li>`);
-    }
-    let ck = $(`#job-list li[data-Isjobend="1"`).children('input[type=checkbox]');
-
-    $(`#job-list li[data-Isjobend="1"`).css('color','red');
-    
-    for(let j=0;j<ck.length;j++){
-        ck[j].checked =true;
-    }
+       
+       
     
 
 }
 
+function clearFull(){
+    $('#job-list li').remove();
+}
 
 
+// 保存数据
 function saveStroe(jobid,job){
     let storage = window.localStorage;
     jobs = JSON.stringify(job);
     storage.setItem(jobid,jobs);
 }
 
-
+// 请求数据
 function getStroe(jobid){
     let storage = window.localStorage;
     
@@ -179,17 +196,16 @@ function getStroe(jobid){
     return JSON.parse(infoStr);
 }
 
+// 删除数据
 function delStroe(jobid){
     let storage = window.localStorage;
     storage.removeItem(jobid);
 }
 
+
 renderView();
 
-
-// 本地存储
-
-});
+//页面路由
 
 
 

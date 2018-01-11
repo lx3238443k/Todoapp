@@ -1,4 +1,10 @@
-$(document).ready(function(){
+$(function () {
+ 
+});
+
+
+
+
  
   $(document).bind("contextmenu", function() { return false; });
 
@@ -21,13 +27,14 @@ $(document).ready(function(){
           if(this.id==='creat-list'){
             num++;
             let title = randTitle(num);
-            $(this).before(`<li class="todo-list active" data-listnum="${num}">
+            $(this).before(`<a href="#/${num}">
+                            <li class="todo-list active" data-listnum="${num}">
                               <div class="list-logo">
                                   <i class="icon-list"></i>
                               </div>
                               <div class="list-title">${title}</div>
                               <div class="list-num"></div>
-                            </li>`);
+                            </li></a>`);
             that_active = $(this).prev();
             $(this).prev().css("opacity","0");
             setTimeout(()=>{
@@ -38,6 +45,12 @@ $(document).ready(function(){
             $(this).toggleClass('active');
             that_active = $(this);
           }
+
+          Router.route(`/${num}`, function() {
+            clearFull()
+             renderView();
+          });
+
 
     }
 
@@ -101,4 +114,4 @@ $(document).ready(function(){
     
 
 
-});
+
