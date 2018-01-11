@@ -39,8 +39,10 @@ function getTime(){
 
 // 删除
 $('#job-list').on('click','button',(e)=>{
-    console.log(e);
+  
     var target = $(e.target);
+    console.log(target.parent());
+    delStroe(target.parent()[0].dataset.jobid);
     target.parent().remove();
 })
 
@@ -145,14 +147,19 @@ function renderView(){
     let arr = Object.keys(val);
     for(let i=0;i<arr.length;i++){
         let obj = getStroe(arr[i]);
-        console.log(arr[i]);
-        $('#job-list').append(`<li data-jobid="${arr[i]}" data-time="${ obj.jobtime}" data-Isjobend="${ obj.Isjobend}">
+       
+        $('#job-list').append(`<li data-jobid="${arr[i]}" data-time="${ obj.jobtime}" data-Isjobend="${obj.Isjobend}">
         <span>${obj.str}</span><input type="checkbox"><button id="deljob">删除</button>
     </li>`);
     }
-    console.log(arr);
+    let ck = $(`#job-list li[data-Isjobend="1"`).children('input[type=checkbox]');
 
-
+    $(`#job-list li[data-Isjobend="1"`).css('color','red');
+    
+    for(let j=0;j<ck.length;j++){
+        ck[j].checked =true;
+    }
+    
 
 }
 
@@ -172,6 +179,10 @@ function getStroe(jobid){
     return JSON.parse(infoStr);
 }
 
+function delStroe(jobid){
+    let storage = window.localStorage;
+    storage.removeItem(jobid);
+}
 
 renderView();
 
