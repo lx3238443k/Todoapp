@@ -5,11 +5,11 @@ $(function () {
 
 
 
- 
+  
   $(document).bind("contextmenu", function() { return false; });
 
   let that_active = $('#side-list');
-
+  // 取名
   function randTitle(num){
     
     let a='未命名标题';
@@ -20,8 +20,8 @@ $(function () {
   let num =0;
   // 左侧栏事件监听
   $('#side-list').on('mouseup', 'li', function(ev) {
-    // this 指向委托的对象 li
-
+    
+    // 添加list
     if(ev.which===1||ev.button==0){
           that_active.toggleClass('active');
           if(this.id==='creat-list'){
@@ -53,7 +53,7 @@ $(function () {
 
 
     }
-
+    // 弹出dialog
     if(ev.which===3||ev.button==2){
 
       $('#dialog').css({

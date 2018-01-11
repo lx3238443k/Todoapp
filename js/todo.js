@@ -150,7 +150,7 @@ function renderView(){
     console.log('zhelishimain.js');
 
     let hash = window.location.hash.slice(2);
-
+    let job_num=0;
     let storage =window.localStorage;
     let val =  storage.valueOf();
     let arr = Object.keys(val);
@@ -160,7 +160,10 @@ function renderView(){
             $('#job-list').append(`<li data-jobid="${arr[i]}" data-time="${ obj.jobtime}" data-Isjobend="${obj.Isjobend}">
             <span>${obj.str}</span><input type="checkbox"><button id="deljob">删除</button>
             </li>`);
+            job_num++;
+         
             }
+            
             let ck = $(`#job-list li[data-Isjobend="1"`).children('input[type=checkbox]');
         
             $(`#job-list li[data-Isjobend="1"`).css('color','red');
@@ -169,6 +172,8 @@ function renderView(){
                 ck[j].checked =true;
             }
         }
+        $(`#side-list a[href="#/${hash}"] li .list-num`)[0].innerHTML =  job_num;
+       
        
        
        
